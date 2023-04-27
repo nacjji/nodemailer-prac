@@ -1,8 +1,8 @@
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import express from 'express';
-import DatabaseManager from './module/db_connect';
-import indexRouter from './router';
+import DatabaseManager from './src/module/db_connect';
+import indexRouter from './src/router';
 
 dotenv.config();
 
