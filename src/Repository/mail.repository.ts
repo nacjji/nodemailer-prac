@@ -15,6 +15,15 @@ class MailRepository {
       VALUES('${data.to}','${process.env.MAIL_SENDER}','${data.title}','${data.content}' ,NOW())`
     );
   };
+
+  public getMailList = async () => {
+    let conn = await db.getConnection();
+    if (!conn) throw new Error();
+
+    const [res] = await conn.query(`SELECT * FROM mail`);
+
+    return res;
+  };
 }
 
 export default MailRepository;

@@ -36,6 +36,13 @@ class MailService {
       else console.log(`${data.to}님에게 메일을 전송했습니다.`);
     });
     await this.mailRepository?.sendMail(data);
+
+    return;
+  };
+
+  public getMailList = async () => {
+    const res = await this.mailRepository?.getMailList();
+    return res;
   };
 }
 
